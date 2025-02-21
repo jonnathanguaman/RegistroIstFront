@@ -1,0 +1,70 @@
+<div class="container">
+  
+  <form [formGroup]="personaForm" class="formulario">
+    <h2>Formulario de registro</h2>
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input formControlName="nombre" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre"/>
+      <div *ngIf="nombre.invalid && nombre.touched" class="error">
+        <p *ngIf="nombre.hasError('required')">El nombre es obligatorio.</p>
+        <p *ngIf="nombre.hasError('pattern')">El nombre solo puede contener letras.</p>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="apellido">Apellido</label>
+      <input formControlName="apellido" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido"/>
+      <div *ngIf="apellido.invalid && apellido.touched" class="error">
+        <p *ngIf="apellido.hasError('required')">El apellido es obligatorio.</p>
+        <p *ngIf="apellido.hasError('pattern')">El apellido solo puede contener letras.</p>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="cedula">Cédula</label>
+      <input formControlName="cedula" type="text" name="cedula" id="cedula" placeholder="Ingrese su cédula"/>
+      <div *ngIf="cedula.invalid && cedula.touched" class="error">
+        <p *ngIf="cedula.hasError('required')">La cédula es obligatoria.</p>
+        <p *ngIf="cedula.hasError('minlength')">La cédula debe tener 10 caracteres.</p>
+        <p *ngIf="cedula.hasError('maxlength')">La cédula debe tener 10 caracteres.</p>
+        <p *ngIf="cedula.hasError('pattern')">Cédula inválida.</p>
+      </div>
+
+    </div>
+
+    <div class="campo">
+      <label for="email">Correo electrónico</label>
+      <input formControlName="email" type="email" name="email" id="email" placeholder="Ingrese su correo"/>
+      <div *ngIf="email.invalid && email.touched" class="error">
+        <p *ngIf="email.hasError('required')">El correo electrónico es obligatorio.</p>
+        <p *ngIf="email.hasError('email')">El correo electrónico es inválida.</p>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="celular">Número de celular</label>
+      <input formControlName="celular" type="tel" name="celular" id="celular" placeholder="Ingrese su número de celular"/>
+      
+      <div *ngIf="celular.invalid && celular.touched" class="error">
+        <p *ngIf="celular.hasError('required')">El número de celular es obligatorio.</p>
+        <p *ngIf="celular.hasError('minlength')">El número de celular debe tener 10 caracteres.</p>
+        <p *ngIf="celular.hasError('maxlength')">El número de celular debe tener 10 caracteres.</p>
+        <p *ngIf="celular.hasError('pattern')">Número de celular inválido.</p>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="carrera">Carrera</label>
+      <select formControlName="carrera" class="carrera" name="carrera" id="carrera">
+        <option value="">Seleccionar</option>
+        <option *ngFor="let carrera of carreras" [value]="[carrera.nombreCarrera]">{{carrera.nombreCarrera}}</option>
+      </select>
+
+      <div *ngIf="carrera.invalid && carrera.touched" class="error">
+        <p *ngIf="carrera.hasError('required')">La carrera es obligatoria.</p>
+      </div>
+    </div>
+
+    <button (click)="crearPersona()">Registrar</button>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Lista de la Personas</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Carrera</th>
+                    <th>Cédula</th>
+                    <th>Célular</th>
+                    <th>Correo electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas">
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                    <td>{{persona.carrera}}</td>
+                    <td>{{persona.cedula}}</td>
+                    <td>{{persona.celular}}</td>
+                    <td>{{persona.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

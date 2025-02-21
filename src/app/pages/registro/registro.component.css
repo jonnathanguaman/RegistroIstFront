@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+.container{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 95vh;
+    
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; 
+    padding: 20px;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+
+.campo input, select {
+    margin-top: 2%;
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.carrera{
+    width: 95%;
+    padding: 7px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    appearance: none; /* Oculta el estilo nativo de iOS y otros navegadores */
+    -webkit-appearance: none; /* Para Safari y Chrome en iOS */
+    -moz-appearance: none; /* Para Firefox */
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+button {
+    width: 95%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -5px;
+  }
+
+@media (max-width: 600px) {
+    .container {
+        height: 85vh;
+    }
+    .formulario {
+        display: flex;
+        flex-direction: column; 
+        width: 350px;
+    }
+}
