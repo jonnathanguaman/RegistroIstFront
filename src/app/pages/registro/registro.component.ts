@@ -24,7 +24,6 @@ export class RegistroComponent implements OnInit{
     this.carrerasService.obtenerCarreras().subscribe({
       next:(carreras)=>{
         this.carreras = carreras
-        console.log("Lego a carreras" + this.carreras)
       }
     })
   }
